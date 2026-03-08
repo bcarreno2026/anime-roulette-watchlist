@@ -1,7 +1,13 @@
 <script setup>
+import { ref } from 'vue'
 import AnimeCard from '@/components/AnimeCard.vue'
+
+const loading = ref(false)
+const error = ref('')
+
 const spin = () => {
-  console.log('Hello')
+  if (error.value.length > 0) error.value = ''
+  else error.value = 'Something wrong'
 }
 </script>
 
@@ -14,14 +20,14 @@ const spin = () => {
     <p class="text-xs font-semibold tracking-[0.3em] uppercase text-cyan-300">Project #4</p>
     <h1 class="mt-2 text-4xl font-black text-white sm:text-5xl">Anime Roulette Machine</h1>
     <p class="mt-2 max-w-3xl text-sm text-slate-300 sm:text-base">
-      Spin the reel, request a random anime from Jinkan with VueUse useFech, and learnhow REST 
+      Spin the reel, request a random anime from Jinkan with VueUse useFetch, and learn how REST 
       APIs signal rate limiting with HTTP 429.
     </p>
   </header>
 
   <div class="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
     <section class="space-y-5">
-      <div class="rounded-3xl border border border-slate-700/70 bg-slate-900/60 p-5 shadow-2xl shadow-slate-950/30 backdrop-blue">
+      <div class="rounded-3xl border border-slate-700/70 bg-slate-900/60 p-5 shadow-2xl shadow-slate-950/30 backdrop-blur">
       <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
         <div>
           <h2 class="text-xl font-bold text-white">Roulette</h2>
@@ -36,7 +42,10 @@ const spin = () => {
       </button>
         </div>
       </div>
-      <AnimeCard loading/>
+      <AnimeCard 
+      :loading="loading"
+      :error="error"
+      />
     </section>
 
   </div>

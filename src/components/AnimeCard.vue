@@ -55,6 +55,12 @@ class="rounded-2xl border border-red-300/50 bg-red-500/10 p-4 text-red-100"
 
 </div>
 
-<div v-else>Done</div>
+<div 
+v-else
+class="rounded-2xl border border-slate-700/60 bg-slate-800/50 p-6 text-center text-slate-300"
+>
+Pull the lever to request your first random anime
+
+</div>
 </section>
 </template>
