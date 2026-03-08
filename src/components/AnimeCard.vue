@@ -55,6 +55,11 @@ class="rounded-2xl border border-red-300/50 bg-red-500/10 p-4 text-red-100"
 
 </div>
 
+<div v-else-if="anime">
+<prep>{{ anime }}</prep>
+
+</div>
+
 <div 
 v-else
 class="rounded-2xl border border-slate-700/60 bg-slate-800/50 p-6 text-center text-slate-300"
