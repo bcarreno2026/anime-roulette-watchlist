@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import AnimeCard from '@/components/AnimeCard.vue'
 import { useAnimeRoulette} from '@/composables/useAnimeRoulette'
+import WatchList from '@/components/WatchList.vue'
 
 const { anime, loading, error, spin, cooldownLeft } = useAnimeRoulette()
 
@@ -31,7 +32,7 @@ const spinLabel = computed(() => {
     <p class="text-xs font-semibold tracking-[0.3em] uppercase text-cyan-300">Project #4</p>
     <h1 class="mt-2 text-4xl font-black text-white sm:text-5xl">Anime Roulette Machine</h1>
     <p class="mt-2 max-w-3xl text-sm text-slate-300 sm:text-base">
-      Spin the reel, request a random anime from Jinkan with VueUse useFetch, and learn how REST 
+      Spin the reel, request a random anime from Jikan with VueUse useFetch, and learn how REST 
       APIs signal rate limiting with HTTP 429.
     </p>
   </header>
@@ -64,9 +65,10 @@ const spinLabel = computed(() => {
       <AnimeCard 
       :loading="loading"
       :error="error"
-      :anime = "anime"
+      :anime= "anime"
       />
     </section>
+    <WatchList />
 
   </div>
   </div>
