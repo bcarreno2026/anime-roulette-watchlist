@@ -38,11 +38,10 @@ const synopsis = computed(() => {
   return props.anime?.synopsis || 'No synopsis available yet.'
 })
 
-// Fixed Typo: changed Trancation to Truncation
-const needsTruncation = computed(() => synopsis.value.length > 240)
+const needsTrancation = computed(() => synopsis.value.length > 240)
 
 const visibleSynopsis = computed(() => {
-  if (synopsisExpanded.value || !needsTruncation.value){
+  if (synopsisExpanded.value || !needsTrancation.value){
     return synopsis.value
   }
   return `${synopsis.value.slice(0, 240)}...`
@@ -65,10 +64,9 @@ class="rounded-3xl border border-slate-700/70 bg-slate-900/60 p-5 shadow-2xl sha
  v-if="props.loading"
 class="space-y-4"
 >
-<!-- Color Changed: cyan -> sky (Light Blue) -->
-<div class="flex items-center gap-3 text-sky-300">
+<div class="flex items-center gap-3 text-cyan-300">
   <div
-  class="h-5 w-5 animate-spin rounded-full border-2 border-sky-400 border-t-transparent"
+  class="h-5 w-5 animate-spin rounded-full border-2 border-cyan-400 border-t-transparent"
   ></div>
   <p class="font-semibold tracking-wide">Shuffling anime reels...</p>
 </div>
@@ -114,23 +112,19 @@ class="rounded-2xl border border-red-300/50 bg-red-500/10 p-4 text-red-100"
       <div>
         <h2 class="text-2xl font-black text-white">{{ anime.title }}</h2>
         <p class="mt-1 text-sm text-slate-300">
-          <!-- Color Changed: amber -> pink -->
-          Score: <span class="font-semibold text-pink-300">{{ anime.score ?? 'N/A' }}</span> ·
-          <!-- Color Changed: cyan -> sky -->
+          Score: <span class="font-semibold text-amber-300">{{ anime.score ?? 'N/A' }}</span> ·
           Episodes:
-          <span class="font-semibold text-sky-300">{{ anime.episodes ?? 'Unknown' }}</span> ·
-          <!-- Color Changed: pink -> purple -->
-          Rating: <span class="font-semibold text-purple-300">{{ anime.rating || 'Unknown' }}</span>
+          <span class="font-semibold text-cyan-300">{{ anime.episodes ?? 'Unknown' }}</span> ·
+          Rating: <span class="font-semibold text-pink-300">{{ anime.rating || 'Unknown' }}</span>
         </p>
       </div>
 
       <p class="text-sm leading-relaxed text-slate-200">
         {{ visibleSynopsis }}
         <button
-          v-if="needsTruncation"
+          v-if="needsTrancation"
           type="button"
-          <!-- Color Changed: cyan -> sky -->
-          class="ml-2 text-sky-300 underline-offset-4 hover:underline"
+          class="ml-2 text-cyan-300 underline-offset-4 hover:underline"
           @click="synopsisExpanded = !synopsisExpanded"
         >
           {{ synopsisExpanded ? 'Show less' : 'Read more' }}
@@ -140,8 +134,7 @@ class="rounded-2xl border border-red-300/50 bg-red-500/10 p-4 text-red-100"
       <div class="flex flex-wrap gap-3">
         <button
           type="button"
-          <!-- Color Changed: cyan -> pink -->
-          class="rounded-full border border-pink-300/60 bg-pink-400/15 px-4 py-2 text-sm font-semibold text-pink-100 transition hover:bg-pink-400/25 disabled:cursor-not-allowed disabled:opacity-50"
+          class="rounded-full border border-cyan-300/60 bg-cyan-400/15 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/25 disabled:cursor-not-allowed disabled:opacity-50"
           :disabled="inWatchlist"
           @click="emit('add', anime)"
         >

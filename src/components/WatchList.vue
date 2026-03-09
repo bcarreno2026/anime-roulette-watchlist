@@ -15,8 +15,7 @@ const emit = defineEmits(['remove'])
   >
     <div class="mb-4 flex items-center justify-between">
       <h2 class="text-xl font-bold text-white">Watchlist</h2>
-      <!-- Color Changed: bg-slate-700 -> bg-purple-500/30 text-purple-200 -->
-      <span class="rounded-full bg-purple-500/30 px-3 py-1 text-xs font-semibold text-purple-200">{{
+      <span class="rounded-full bg-slate-700 px-3 py-1 text-xs font-semibold text-slate-200">{{
         items.length
       }}</span>
     </div>
@@ -54,10 +53,8 @@ const emit = defineEmits(['remove'])
 
           <div class="min-w-0 flex-1">
             <h3 class="truncate text-sm font-semibold text-white">{{ item.title }}</h3>
-            <!-- Color Accents: Pink and Sky -->
             <p class="mt-1 text-xs text-slate-300">
-              <span class="text-pink-300">⭐ {{ item.score ?? 'N/A' }}</span> · 
-              <span class="text-sky-300">Ep {{ item.episodes ?? '?' }}</span> ·
+              ⭐ {{ item.score ?? 'N/A' }} · Ep {{ item.episodes ?? '?' }} ·
               {{ item.rating || 'Unrated' }}
             </p>
             <div class="mt-3 flex flex-wrap gap-2">
@@ -65,8 +62,7 @@ const emit = defineEmits(['remove'])
                 :href="item.url"
                 target="_blank"
                 rel="noopener noreferrer"
-                <!-- Color Changed: cyan -> sky -->
-                class="text-xs font-semibold text-sky-300 hover:underline"
+                class="text-xs font-semibold text-cyan-300 hover:underline"
               >
                 MAL Link
               </a>
