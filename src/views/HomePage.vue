@@ -1,7 +1,7 @@
 <script setup>
 import { computed } from 'vue'
 import AnimeCard from '@/components/AnimeCard.vue'
-import { useAnimeRoulette} from '@/composables/useAnimeRoulette'
+import { useAnimeRoulette } from '@/composables/useAnimeRoulette'
 import WatchList from '@/components/WatchList.vue'
 
 const { 
@@ -29,17 +29,15 @@ const spinLabel = computed(() => {
 
   return 'Spin 🎰'
 })
-
-
 </script>
 
 <template>
   <main 
-  class="min-h-screen bg-[radial-gradient(circle_at_15%_20%,#334155,transparent_40%),radial-gradient(circle_at_85%_0%,#0f766e,transparent_28%),linear-gradient(160deg,#020617,#0f172a,#111827)] px-4 py-8 text-slate-100 sm:px-6 lg:px-8"
+  class="min-h-screen bg-[radial-gradient(circle_at_15%_20%,#312e81,transparent_40%),radial-gradient(circle_at_85%_0%,#581c87,transparent_28%),linear-gradient(160deg,#020617,#0f172a,#111827)] px-4 py-8 text-slate-100 sm:px-6 lg:px-8"
   >
   <div class="mx-auto max-w-7xl">
   <header class="mb-8">
-    <p class="text-xs font-semibold tracking-[0.3em] uppercase text-cyan-300">Project #4</p>
+    <p class="text-xs font-semibold tracking-[0.3em] uppercase text-sky-300">Project #4</p>
     <h1 class="mt-2 text-4xl font-black text-white sm:text-5xl">Anime Roulette Machine</h1>
     <p class="mt-2 max-w-3xl text-sm text-slate-300 sm:text-base">
       Spin the reel, request a random anime from Jikan with VueUse useFetch, and learn how REST 
@@ -58,7 +56,7 @@ const spinLabel = computed(() => {
         <button 
         type="button"
         :disabled="spinDisable" 
-        class="cursor-pointer rounded-full border border-cyan-300/70 bg-cyan-400/20 px-6 py-3 text-base font-black tracking-wide text-cyan-100 hover:bg-cyan-400/30 disabled:cursor-not-allowed disabled:opacity-60"
+        class="cursor-pointer rounded-full border border-pink-300/70 bg-pink-400/20 px-6 py-3 text-base font-black tracking-wide text-pink-100 hover:bg-pink-400/30 disabled:cursor-not-allowed disabled:opacity-60"
         @click="spin"
         >
         {{ spinLabel }}
@@ -66,10 +64,9 @@ const spinLabel = computed(() => {
     </div>
     <p
       v-if="cooldownLeft > 0"
-      class="mt-4 rounded-xl border border-amber-300/50 bg-amber-400/10 px-3 py-2 text-sm font-semibold text-amber-100"
+      class="mt-4 rounded-xl border border-purple-300/50 bg-purple-400/10 px-3 py-2 text-sm font-semibold text-purple-100"
     >
     Rate-limited. Try again in {{ cooldownLeft }}s.
-
     </p>
       </div>
       <AnimeCard 
@@ -84,7 +81,6 @@ const spinLabel = computed(() => {
     :items="watchlist"
     @remove="removeFromWatchlist"
     />
-
   </div>
   </div>
 </main>
