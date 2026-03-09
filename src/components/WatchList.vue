@@ -11,18 +11,18 @@ const emit = defineEmits(['remove'])
 
 <template>
   <aside
-    class="rounded-3xl border border-slate-700/70 bg-slate-900/60 p-5 shadow-2xl shadow-slate-950/30 backdrop-blur-sm"
+    class="rounded-3xl border border-purple-500/30 bg-purple-950/40 p-5 shadow-2xl shadow-purple-950/50 backdrop-blur-sm"
   >
     <div class="mb-4 flex items-center justify-between">
-      <h2 class="text-xl font-bold text-white">Watchlist</h2>
-      <span class="rounded-full bg-slate-700 px-3 py-1 text-xs font-semibold text-slate-200">{{
+      <h2 class="text-xl font-bold text-pink-200">Watchlist</h2>
+      <span class="rounded-full bg-purple-500/30 px-3 py-1 text-xs font-semibold text-purple-200">{{
         items.length
       }}</span>
     </div>
 
     <p
       v-if="!items.length"
-      class="rounded-2xl border border-slate-700/70 bg-slate-800/60 p-4 text-sm text-slate-300"
+    class="rounded-2xl border border-purple-500/30 bg-purple-950/40 p-4 text-sm text-purple-200/80"
     >
       No picks saved yet. Spin and add an anime to build your watchlist.
     </p>

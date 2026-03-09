@@ -73,11 +73,11 @@ class="space-y-4"
 </div>
 
 <div class="grid grid-cols-3 gap-2">
-  <div class="h-3 animate-pulse rounded bg-slate-700"></div>
-  <div class="h-3 animate-pulse rounded bg-slate-700"></div>
-  <div class="h-3 animate-pulse rounded bg-slate-700"></div>
+<div class="h-3 animate-pulse rounded bg-sky-900/50"></div>
+<div class="h-3 animate-pulse rounded bg-sky-900/50"></div>
+<div class="h-3 animate-pulse rounded bg-sky-900/50"></div>
   </div>
-  <div class="h-72 animate-pulse rounded-2xl bg-slate-800"></div>
+<div class="h-72 animate-pulse rounded-2xl bg-purple-900/40"></div>
 
 </div>
 
@@ -94,7 +94,7 @@ class="rounded-2xl border border-red-300/50 bg-red-500/10 p-4 text-red-100"
       v-else-if="anime"
       class="space-y-4"
     >
-      <div class="overflow-hidden rounded-2xl border border-slate-700/80 bg-slate-800/60">
+    <div class="overflow-hidden rounded-2xl border border-purple-500/30 bg-purple-900/40">
         <img
           v-if="animeImage"
           :src="animeImage"
@@ -111,7 +111,7 @@ class="rounded-2xl border border-red-300/50 bg-red-500/10 p-4 text-red-100"
       </div>
 
       <div>
-        <h2 class="text-2xl font-black text-white">{{ anime.title }}</h2>
+      <h2 class="text-2xl font-black text-sky-100">{{ anime.title }}</h2>
         <p class="mt-1 text-sm text-slate-300">
           Score: <span class="font-semibold text-amber-300">{{ anime.score ?? 'N/A' }}</span> ·
           Episodes:
@@ -125,7 +125,7 @@ class="rounded-2xl border border-red-300/50 bg-red-500/10 p-4 text-red-100"
         <button
           v-if="needsTrancation"
           type="button"
-          class="ml-2 text-cyan-300 underline-offset-4 hover:underline"
+          class="ml-2 text-sky-300 underline-offset-4 hover:underline"
           @click="synopsisExpanded = !synopsisExpanded"
         >
           {{ synopsisExpanded ? 'Show less' : 'Read more' }}
@@ -135,7 +135,7 @@ class="rounded-2xl border border-red-300/50 bg-red-500/10 p-4 text-red-100"
       <div class="flex flex-wrap gap-3">
         <button
           type="button"
-          class="rounded-full border border-cyan-300/60 bg-cyan-400/15 px-4 py-2 text-sm font-semibold text-cyan-100 transition hover:bg-cyan-400/25 disabled:cursor-not-allowed disabled:opacity-50"
+        class="rounded-full border border-pink-300/60 bg-pink-400/15 px-4 py-2 text-sm font-semibold text-pink-100 transition hover:bg-pink-400/25 disabled:cursor-not-allowed disabled:opacity-50"
           :disabled="inWatchlist"
           @click="emit('add', anime)"
         >
@@ -146,7 +146,7 @@ class="rounded-2xl border border-red-300/50 bg-red-500/10 p-4 text-red-100"
           :href="anime.url"
           target="_blank"
           rel="noopener noreferrer"
-          class="rounded-full border border-white/20 px-4 py-2 text-sm font-semibold text-white transition hover:border-white/40"
+          class="rounded-full border border-pink-300/30 px-4 py-2 text-sm font-semibold text-pink-200 transition hover:border-pink-300/60"
         >
           Open on MAL
         </a>
